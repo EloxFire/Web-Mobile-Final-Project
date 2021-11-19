@@ -1,0 +1,7 @@
+{
+  "name": "web-mobile-final-project",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
