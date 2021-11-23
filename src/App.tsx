@@ -1,3 +1,4 @@
+import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
@@ -13,6 +14,8 @@ import { ellipse, square, triangle } from 'ionicons/icons';
 import Home from './pages/Home/Home';
 import Profil from './pages/Profil/Profil';
 import Stats from './pages/Stats/Stats';
+import LoginPage from './pages/LoginPage/LoginPage';
+import Overview from './pages/Overview/Overview';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -33,42 +36,53 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route exact path="/profil">
-            <Profil />
-          </Route>
-          <Route exact path="/overview">
-            <Home />
-          </Route>
-          <Route path="/stats">
-            <Stats />
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/overview" />
-          </Route>
-        </IonRouterOutlet>
+const App: React.FC = () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="Profil" href="/profil">
-            <IonIcon icon={triangle} />
-            <IonLabel>Profil</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="Overview" href="/overview">
-            <IonIcon icon={ellipse} />
-            <IonLabel>Overview</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="Stats" href="/stats">
-            <IonIcon icon={square} />
-            <IonLabel>Statistiques</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
-);
+  return(
+    <IonApp>
+      <IonReactRouter>
+        {/* <IonTabs> */}
+          <IonRouterOutlet>
+            <Route exact path="/profil">
+              <Profil />
+            </Route>
+            <Route exact path="/home">
+              <Home />
+            </Route>
+            <Route path="/stats">
+              <Stats />
+            </Route>
+            <Route path="/signin">
+              <LoginPage />
+            </Route>
+            <Route path="/overview">
+              <Overview />
+            </Route>
+            <Route exact path="/">
+              <Redirect to="/home" />
+            </Route>
+          </IonRouterOutlet>
+
+          {/* <IonTabBar slot="bottom">
+            <IonTabButton tab="Profil" href="/profil">
+              <IonIcon icon={triangle} />
+              <IonLabel>Profil</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="Overview" href="/overview">
+              <IonIcon icon={ellipse} />
+              <IonLabel>Overview</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="Stats" href="/stats">
+              <IonIcon icon={square} />
+              <IonLabel>Statistiques</IonLabel>
+            </IonTabButton>
+          </IonTabBar>
+        </IonTabs> */}
+      </IonReactRouter>
+    </IonApp>
+  )
+}
 
 export default App;

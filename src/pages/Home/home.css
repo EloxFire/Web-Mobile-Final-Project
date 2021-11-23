@@ -1,0 +1,77 @@
+@import "../../App.css";
+
+.app-version{
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
+  color: var(--ion-custom-black);
+}
+
+.container{
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-top-container{
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.login-bottom-container{
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-signin-container{
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.login-signin-container .signin-button-classic{
+  width: 75%;
+}
+
+.login-signin-container .signin-button-biometric{
+  width: 20%;
+}
+
+.login-signup-container{
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-title{
+  font-size: 4em;
+  font-weight: 800;
+  color: var(--ion-custom-black);
+  margin: 0;
+}
+
+.login-subtitle{
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.login-title span{
+  color: var(--ion-custom-red);
+}
