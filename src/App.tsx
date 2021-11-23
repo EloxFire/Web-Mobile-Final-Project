@@ -15,6 +15,7 @@ import Home from './pages/Home/Home';
 import Profil from './pages/Profil/Profil';
 import Stats from './pages/Stats/Stats';
 import LoginPage from './pages/LoginPage/LoginPage';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
 import Overview from './pages/Overview/Overview';
 
 /* Core CSS required for Ionic components to work properly */
@@ -56,6 +57,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/signin">
               <LoginPage />
+            </Route>
+            <Route path="/signup">
+              <RegisterPage />
             </Route>
             <Route path="/overview">
               <Overview />

@@ -1,0 +1,38 @@
+@import "../../App.css";
+
+.container {
+  justify-content: flex-start;
+  padding-top: calc(var(--vh, 1vh) * 5);
+}
+
+.signup-title{
+  color: var(--ion-custom-black);
+  font-size: 3em;
+  font-weight: 800;
+  margin: 0;
+}
+
+.signup-title span{
+  color: var(--ion-custom-red);
+}
+
+.signup-input{
+  background-color: var(--ion-custom-white);
+  border: 1px solid var(--ion-custom-black);
+  border-radius: 10px;
+  height: 40px;
+}
+
+.signup-form{
+  margin-top: calc(var(--vh, 1vh) * 10);
+}
+
+.signup-pass-forgot{
+  color: var(--ion-custom-black);
+  padding-top: calc(var(--vh, 1vh) * 2);
+}
+
+.signup-feedback{
+  margin: 0;
+  text-align: center;
+}
