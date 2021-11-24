@@ -47,7 +47,9 @@ const LoginPage: React.FC = () => {
         pictureUrl: userInfos.user.photoURL ? userInfos.user.photoURL : ""
       })
 
-      window.location.href = "/overview";
+      setInterval(() => {
+        window.location.href = "/overview";
+      }, 2000);
 
       // ...
     }).catch((error) => {

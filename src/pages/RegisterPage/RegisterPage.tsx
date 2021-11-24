@@ -13,6 +13,19 @@ const RegisterPage: React.FC = () => {
 
   const registerNewUser = (e: React.SyntheticEvent) => {
     e.preventDefault();
+    let feedback = document.getElementById('signup-feedback-error')!;
+
+    if(userPassword !== userPasswordConfirmation){
+      feedback.style.color = "#D94133";
+      feedback.innerHTML = "Les mots de passe ne correspondent pas..."
+    }else{
+      feedback.style.color = "#05C46B";
+      feedback.innerHTML = "Inscription réussie !"
+
+      setInterval(() => {
+        window.location.href = "/overview";
+      }, 2000);
+    }
 
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, username, userPassword)
