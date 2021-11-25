@@ -5,6 +5,10 @@
   font-family: 'Montserrat';
 }
 
+input{
+  color: var(--ion-custom-black);
+}
+
 .container{
   padding-left: 30px;
   padding-right: 30px;

@@ -21,6 +21,7 @@
   border: 1px solid var(--ion-custom-black);
   border-radius: 10px;
   height: 40px;
+  color: var(--ion-custom-black);
 }
 
 .signup-form{

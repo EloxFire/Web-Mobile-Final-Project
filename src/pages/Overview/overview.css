@@ -1,1 +1,40 @@
 @import "../../App.css";
+
+.container{
+  padding-top: calc(var(--vh, 1vh) * 2);
+}
+
+.overview-title{
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--ion-custom-black);
+}
+
+.overview-title span{
+  color: var(--ion-custom-red);
+}
+
+.overview-balance-container{
+  margin-top: calc(var(--vh, 1vh) * 10);
+}
+
+.overview-balance-container-title{
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.overview-balance-container-title span{
+  color: var(--ion-custom-red);
+}
+
+.overview-balance-container-value{
+  text-align: center;
+  font-size: 3em;
+  margin: 0;
+  font-weight: 800;
+  color: var(--ion-custom-black);
+}
+
+.overview-balance-container-value span{
+  color: var(--ion-custom-red);
+}

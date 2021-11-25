@@ -1,6 +1,6 @@
 import React, {useState, useEffect, Fragment} from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonIcon } from '@ionic/react';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import './register.css';
 
 const RegisterPage: React.FC = () => {
@@ -19,30 +19,22 @@ const RegisterPage: React.FC = () => {
       feedback.style.color = "#D94133";
       feedback.innerHTML = "Les mots de passe ne correspondent pas..."
     }else{
-      feedback.style.color = "#05C46B";
-      feedback.innerHTML = "Inscription réussie !"
+      const auth = getAuth();
+      createUserWithEmailAndPassword(auth, userMail, userPassword)
+      .then((result) => {
+        updateProfile(result.user, {
+          displayName: username
+        })
+        feedback.style.color = "#05C46B";
+        feedback.innerHTML = "Inscription réussie !"
 
-      setInterval(() => {
-        window.location.href = "/overview";
-      }, 2000);
+        setInterval(() => {
+          window.location.href = "/overview";
+        }, 2000);
+      }).catch((error) => {
+        console.log(error);
+      });
     }
-
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, username, userPassword)
-    .then((userInfos) => {
-      console.log(userInfos.user);
-      // Setting user
-      setUser({
-        uid: userInfos.user.uid ? userInfos.user.uid : "",
-        username: userInfos.user.displayName ? userInfos.user.displayName : "",
-        email: userInfos.user.email ? userInfos.user.email : "",
-        emailVerified: userInfos.user.emailVerified ? userInfos.user.emailVerified : false,
-        phone: userInfos.user.phoneNumber ? userInfos.user.phoneNumber : "",
-        pictureUrl: userInfos.user.photoURL ? userInfos.user.photoURL : ""
-      })
-    }).catch((error) => {
-      console.log(error);
-    })
   }
 
   return (
@@ -57,16 +49,16 @@ const RegisterPage: React.FC = () => {
               <input onChange={(e) => setUsername(e.target.value)} className="signup-input" id="signup-username-input" type="text" placeholder="Nom d'utilisateur"/>
             </div>
             <div className="form-block-column">
-              <label htmlFor="signup-username-input">Email</label>
-              <input onChange={(e) => setUserMail(e.target.value)} className="signup-input" id="signup-username-input" type="text" placeholder="Nom d'utilisateur"/>
+              <label htmlFor="signup-usermail-input">Email</label>
+              <input onChange={(e) => setUserMail(e.target.value)} className="signup-input" id="signup-usermail-input" type="text" placeholder="Nom d'utilisateur"/>
             </div>
             <div className="form-block-column">
               <label htmlFor="signup-password-input">Mot de passe</label>
               <input onChange={(e) => setUserPassword(e.target.value)} className="signup-input" id="signup-password-input" type="password" placeholder="Mot de passe"/>
             </div>
             <div className="form-block-column">
-              <label htmlFor="signup-password-input">Vérification mot de passe</label>
-              <input onChange={(e) => setUserPasswordConfirmation(e.target.value)} className="signup-input" id="signup-password-input" type="password" placeholder="Mot de passe"/>
+              <label htmlFor="signup-password-confirmation-input">Vérification mot de passe</label>
+              <input onChange={(e) => setUserPasswordConfirmation(e.target.value)} className="signup-input" id="signup-password-confirmation-input" type="password" placeholder="Mot de passe"/>
             </div>
             <div className="form-block-column">
               <button type="submit" className="button signup-button">Inscription</button>
