@@ -15,7 +15,7 @@
 }
 
 .overview-balance-container{
-  margin-top: calc(var(--vh, 1vh) * 10);
+  /* margin-top: calc(var(--vh, 1vh) * ); */
 }
 
 .overview-balance-container-title{
@@ -28,8 +28,8 @@
 }
 
 .overview-balance-container-value{
-  text-align: center;
-  font-size: 3em;
+  /* text-align: center; */
+  font-size: 3.5em;
   margin: 0;
   font-weight: 800;
   color: var(--ion-custom-black);
@@ -37,4 +37,8 @@
 
 .overview-balance-container-value span{
   color: var(--ion-custom-red);
+}
+
+.overview-expenses-container{
+  margin-top: calc(var(--vh, 1vh) * 5);
 }

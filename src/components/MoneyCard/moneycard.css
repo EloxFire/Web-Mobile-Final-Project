@@ -1,0 +1,38 @@
+@import "../../App.css";
+
+.moneycard-container{
+  height: calc(var(--vh, 1vh) * 7);
+  border-top: 1px solid var(--ion-custom-black);
+  /* border-bottom: 1px solid var(--ion-custom-black); */
+  margin: 0px -30px 0px -30px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.moneycard-left-details-container{
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.moneycard-right-details-container{
+  padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.moneycard-left-details-container p, .moneycard-right-details-container p{
+  margin: 0;
+}
+
+.moneycard-expense-title{
+  font-weight: 600;
+}
+
+.moneycard-expense-date{
+  font-size: .7em;
+}
