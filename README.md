@@ -1,4 +1,4 @@
-# <p style="font-weight:700;font-family=Montserrat"><span style="color:#D94133">S</span>olver - A banking app | Web Mobile Final Project</p>
+# <span style="color:#D94133">S</span>olver - A banking app | Web Mobile Final Project
 
 **Solver** is a little banking app where you can track your expenses and incomes with custom statistics. You'll find every tool you need to keep your bank account in the green side !
 
